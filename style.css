@@ -1,0 +1,202 @@
+body {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.5;
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.logo, .group-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    margin-bottom: 5px;
+}
+
+.main-nav {
+    border-bottom: 2px solid black;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    background: #33c359;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+.main-nav ul li a:hover {
+    background: #28a745;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    flex: 1 1 250px;
+    border-right: 2px solid black;
+    padding: 20px;
+    max-width: 250px;
+    box-sizing: border-box;
+}
+
+.content {
+    flex: 3 1 600px;
+    padding: 20px;
+}
+
+.profile-pic {
+    width: 200px;
+    height: auto;
+    border: 2px solid black;
+    margin-top: 10px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid black;
+    background-color: rgba(79, 209, 197, 0.64);
+}
+
+.footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.telegram-icon {
+    width: 30px;
+    height: auto;
+}
+
+.button, .shine-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #33c359;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.shine-btn:hover, .button:hover {
+    background: #28a745;
+}
+
+/* Медиа-запросы для адаптивности */
+
+/* От 768px и ниже */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sidebar {
+        border-right: none;
+        border-bottom: 2px solid black;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .content {
+        padding: 10px;
+    }
+    .profile-pic {
+        width: 150px;
+    }
+}
+
+/* От 480px и ниже */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+    .main-nav ul {
+        padding: 10px;
+    }
+    .button, .shine-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+    .profile-pic {
+        width: 130px;
+    }
+    .footer p {
+        flex-direction: column;
+    }
+}
+
+/* От 350px и ниже */
+@media (max-width: 350px) {
+    .header {
+        padding: 10px;
+    }
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    .main-nav ul li {
+        margin: 0;
+    }
+    .main-nav ul li a {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    .sidebar {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .content {
+        padding: 10px;
+    }
+    .footer {
+        font-size: 14px;
+    }
+    .footer p {
+        font-size: 14px;
+    }
+}

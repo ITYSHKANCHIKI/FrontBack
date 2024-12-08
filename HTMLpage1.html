@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги - Разработка веб-приложений</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="лого.png" alt="Фото" class="logo-img">
+            <p class="logo-text">Логотип</p>
+        </div>
+        <div class="group-info">
+            <p>Группа ЭФБО-02-23</p>
+            <p>Шкенев Максим Алексеевич</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <div class="wrap">
+                <li><a href="HTMLpage.html" class="button">Главная</a></li>
+                <li><a href="HTMLpage2.html" class="button">Первый семестр</a></li>
+                <li><a href="HTMLpage3.html" class="button">Второй семестр</a></li>
+                <li><a href="HTMLpage1.html" class="button">Услуги</a></li>
+                <li><a href="#" class="button">Авторизация</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <aside class="sidebar">
+            <div>
+                <p>НАВИГАЦИЯ ПО СТРАНИЦЕ</p>
+                <ul>
+                    <li><a href="#services" class="shine-btn">Заказы</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="content">
+            <h1 id="services">Разработка веб-приложений</h1>
+            
+            <div class="services-section">
+                <div class="service-item">
+                    <img src="визиточка.png" alt="Инопланетянин утаскивает корову" class="service-img">
+                    <p>Сайт-визитка</p>
+                    <a href="#" class="floating-button" onclick="showModal()">Заказать</a>
+                </div>
+                <div class="service-item">
+                    <img src="корпоративный.png" alt="Корпоративные сайты на любой выбор, искатели могил" class="service-img">
+                    <p>Корпоративный сайт</p>
+                    <a href="#" class="floating-button" onclick="showModal()">Заказать</a>
+                </div>
+                <div class="service-item">
+                    <img src="магазин.png" alt="Интернет-магазин, обезьяна продает бананы смотреть всем!" class="service-img">
+                    <p>Интернет-магазин</p>
+                    <a href="#" class="floating-button" onclick="showModal()">Заказать</a>
+                </div>
+            </div>
+            
+            <div class="service-description">
+                <p>Потребитель вправе отказаться от исполнения договора о выполнении работы (оказании услуги) и потребовать полного возмещения убытков, если в установленный указанным договором срок недостатки выполненной работы (оказанной услуги) не устранены исполнителем. Потребитель также вправе отказаться от исполнения договора о выполнении работы (оказании услуги), если им обнаружены существенные недостатки выполненной работы (оказанной услуги) или иные существенные отступления от условий договора. Цена выполненной работы (оказанной услуги), возвращаемая потребителю при отказе от исполнения договора о выполнении работы (оказании услуги), а также учитываемая при уменьшении цены выполненной работы (оказанной услуги), определяется в соответствии с пунктами 3, 4 и 5 статьи 24 настоящего Закона.</p>
+            </div>
+            
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Заявка на услуги</h2>
+                    <form id="orderForm" action="_адрес для отправки_" method="GET" name="my_form" class="form">
+                        <div class="form-row">
+                            <label for="name">Как вас зовут:</label>
+                            <input type="text" id="name" class="guest" placeholder="например Иванов Иван Иванович" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="email">Ваш e-mail:</label>
+                            <input type="email" id="email" class="guest" placeholder="example@mail.com" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="phone">Телефон:</label>
+                            <input type="tel" id="phone" class="guest" placeholder="+7 (999) 999-99-99" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="country">Страна:</label>
+                            <select id="country" class="guest" required>
+                                <option value="Россия">Россия</option>
+                                <option value="Казахстан">Казахстан</option>
+                                <option value="Беларусь">Беларусь</option>
+                                <option value="Индонезия">Индонезия</option>
+                                <option value="Китай">Китай</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="date">Дата:</label>
+                            <input type="date" id="date" class="guest" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="comment">Комментарий:</label>
+                            <textarea id="comment" class="guest" placeholder="Ваш комментарий..." rows="4"></textarea>
+                        </div>
+                        <div class="form-row checkbox-row">
+                            <input type="checkbox" id="agree" required />
+                            <label for="agree">Согласен на обработку моих персональных данных</label>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit">Отправить заявку</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <li><a href="HTMLpage1.html" class="shine-btn">НАВЕРХ</a></li>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </main>
+
+    <footer class="footer">
+        <p>© Шкенев Максим Алексеевич, 2024
+            <a href="https://t.me/ITYSHKANCHIKI">
+                <img src="телеграм.png" alt="Telegram" class="telegram-icon">
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>

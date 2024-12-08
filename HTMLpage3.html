@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример страницы с Bootstrap</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+        /* Стили для слайдов */
+        .carousel-item img {
+            object-fit: cover;
+            height: 400px; /* фиксированная высота */
+        }
+
+        /* Стили для логотипа */
+        .navbar-brand img {
+            height: 40px; /* Высота логотипа */
+        }
+
+        /* Отступы для футера */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid black;
+            width: 100%;
+            background-color: rgba(79,209,197,0.64);
+            box-sizing: border-box;
+        }
+
+        .footer p {
+            display: grid;
+            grid-template-columns: 11fr 0.6fr;
+            align-items: center;  
+        }
+
+        .telegram-icon {
+            width: 50px; 
+            height: auto; 
+            vertical-align: middle; 
+        }
+
+        body {
+            background-image: url('психиатричка.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .text-left {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Хедер -->
+    <header class="container-fluid py-2 bg-light border-bottom">
+        <div class="d-flex align-items-center">
+            <a href="index.html" class="navbar-brand">
+                <img src="лого.png" alt="Логотип">
+            </a>
+            <h1 class="ms-3 h5 text-primary">Психиатрическая лечебница "Коллингвуд"</h1>
+        </div>
+    </header>
+
+    <!-- Меню -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="HTMLpage.html">Главная</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Выпадающее меню
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Пункт 1</a></li>
+                                <li><a class="dropdown-item" href="#">Пункт 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="тушканчик.jpg" class="card-img-top" alt="Изображение товара">
+                    <div class="card-body">
+                        <h5 class="card-title">Тушканчик</h5>
+                        <p class="card-text">Милый и маленький зверёк, думает что он пират и страдает манией величия. Просит обращаться к нему - капитан Филипп Морс.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Купить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="смирительная_рубашка.jpg" class="card-img-top" alt="Изображение товара">
+                    <div class="card-body">
+                        <h5 class="card-title">Смирительная рубашка</h5>
+                        <p class="card-text">Смирительная рубашка укрепленного вида, подходит для самых буйных пациентов. Смело приобретайте, обезопасьте других!</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Купить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="коляска.jpg" class="card-img-top" alt="Изображение товара">
+                    <div class="card-body">
+                        <h5 class="card-title">Инвалидная коляска</h5>
+                        <p class="card-text">Инвалидная коляска для пациентки Дженис. Синдром мюнхаюзена, слышали? Она постоянно придумывает себе болезни.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Купить</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Добавьте еще карточки аналогичным образом -->
+        </div>
+    </div>
+
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Оформление заказа</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="customerName" class="form-label">Имя покупателя</label>
+                            <input type="text" class="form-control" id="customerName" placeholder="Введите ваше имя">
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="customerEmail" placeholder="Введите ваш email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="productQuantity" class="form-label">Количество</label>
+                            <input type="number" class="form-control" id="productQuantity" min="1" value="1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="deliveryAddress" class="form-label">Адрес доставки</label>
+                            <input type="text" class="form-control" id="deliveryAddress" placeholder="Введите адрес доставки">
+                        </div>
+                        <div class="mb-3">
+                            <label for="additionalNotes" class="form-label">Примечания</label>
+                            <textarea class="form-control" id="additionalNotes" rows="3" placeholder="Дополнительные примечания к заказу"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Подтвердить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контент -->
+    <div class="container my-4">
+        <!-- Слайдер -->
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="слайд1.jpg" class="d-block w-100" alt="Слайд 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="слайд2.jpg" class="d-block w-100" alt="Слайд 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="слайд3.jpg" class="d-block w-100" alt="Слайд 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Назад</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Вперед</span>
+            </button>
+        </div>
+
+
+        <div class="container my-4">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Пациент №1</th>
+                        <th>Пациент №2</th>
+                        <th>Пациент №3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Лэнс Престон</td>
+                        <td>Дженис</td>
+                        <td>Томас</td>
+                    </tr>
+                    <!-- Добавьте еще строки, если нужно -->
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="container my-4">
+            <div class="ratio ratio-16x9">
+                <iframe src="1015.mp4" title="RuTube видео" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h2 class="text-left mb-4">Контингент пациентов</h2>
+            <!-- Встроенный PDF-файл для просмотра -->
+            <div class="text-center mt-4">
+                <iframe src="псих.pdf" width="100%" height="600px" style="border: none;"></iframe>
+            </div>
+        </div>
+
+        <!-- Кнопка "Назад" -->
+        <div class="text-center my-4">
+            <a href="HTMLpage3.html" class="btn btn-secondary">НАВЕРХ</a>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer" id="contact">
+        <p>© Шкенев Максим Алексеевич, 2024
+            <a href="https://t.me/ITYSHKANCHIKI">
+                <img src="телеграм.png" alt="Telegram" class="telegram-icon">
+            </a>
+        </p>
+    </footer>
+
+    <!-- Подключение Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
